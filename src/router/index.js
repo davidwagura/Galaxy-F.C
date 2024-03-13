@@ -1,15 +1,15 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import ListPage from '../components/ListPage.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import ListPage from '../components/ListPage.vue'
+import Addpage from '../components/AddPage.vue'
 
-Vue.use(VueRouter);
 
 const routes = [
     { path: '/', component: ListPage },
     { path: '/add', component: Addpage },
 ];
 
-const router = new VueRouter({
+const router = createRouter({
+    history: createWebHistory(),
     routes,
 });
 

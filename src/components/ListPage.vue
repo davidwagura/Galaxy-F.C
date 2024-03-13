@@ -26,17 +26,34 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
+    name: 'ListPage',
+
     data() {
         return {
             players: []
         };
     },
+
+    created() {
+        this.listPlayers()
+    },
+
     methods: {
-        editPlayer(player) {
+        listPlayers() {
+            axios.get()
+            .then(response => {
+                console.log(response.data)
+                this.players = response.data;
+            })
+        },
+        editPlayer() {
 
         },
-        deletePlayer(playerId) {
+        deletePlayer() {
+            axios.delete()
             
         }
     }
