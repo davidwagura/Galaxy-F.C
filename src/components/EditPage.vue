@@ -36,28 +36,39 @@ export default {
                 age: '',
                 nationality: '',
                 position: '' 
-            }
+            },
         };
     },
     created() {
-        axios.get('http://127.0.0.1:8000/api/player/${id}/edit/')
+
+        console.log(this.$route.params)
+
+        axios.get(`http://127.0.0.1:8000/api/player/${this.$route.params.id}/edit`)
             .then(response => {
+
                 this.formData.name = response.data.name
                 this.formData.age = response.data.age
                 this.formData.position = response.data.position
                 this.formData.nationality = response.data.nationality
             })
+            .catch(error => {
+                console.error('Error fetching player data:', error);
+            });
     },
 
     methods: {
       updatePlayer() {
-        axios.post('http://127.0.0.1:8000/api/player/${id}',this.formData)
+        axios.put(`http://127.0.0.1:8000/api/player/${this.$route.params.id}`, this.formData)
         .then(response => {
             console.log(response);
         })
+        .catch(error => {
+          console.error('Error updating player:', error);
+        });
+        // this.$router.push('/')
       }  
     }
-}
+};
 </script>
 
  <style>

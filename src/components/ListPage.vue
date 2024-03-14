@@ -5,9 +5,6 @@
         <ul>
             <li v-for="player in players" :key="player.id" class="bg-gray-100 rounded-md shadow-md p-4 mb-4">
                 <div>
-                    <strong class="text-lg">Id:</strong> <span>{{ player.id }}</span>
-                </div>
-                <div>
                     <strong class="text-lg">Name:</strong> <span>{{ player.name }}</span>
                 </div>
                 <div>
@@ -19,12 +16,13 @@
                 <div>
                     <strong class="text-lg">Position:</strong> <span>{{ player.position }}</span>
                 </div>
-                <button @click="editPlayer(player)" class="bg-blue-500 text-white py-1 px-3 rounded-md mt-2 mr-2 hover:bg-blue-600 transition duration-300">Edit</button>
+                <router-link :to="'/edit/' + player.id" class="bg-blue-500 text-white py-1 px-3 rounded-md mt-2 mr-2 hover:bg-blue-600 transition duration-300">Edit</router-link>
                 <button @click="deletePlayer(player.id)" class="bg-red-500 text-white py-1 px-3 rounded-md mt-2 hover:bg-red-600 transition duration-300">Delete</button>
             </li>
         </ul>
     </div>
 </template>
+    
 
 <script>
 import axios from 'axios';
@@ -49,9 +47,6 @@ export default {
                 // console.log(response.data)
                 this.players = response.data;
             })
-        },
-        editPlayer() {
-            this.$router.push('/edit')
         },
         deletePlayer() {
             this.$router.push('/delete')

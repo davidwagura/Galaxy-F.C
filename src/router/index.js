@@ -8,7 +8,7 @@ import DeletePage from '../components/DeletePage.vue'
 const routes = [
     { path: '/', component: ListPage },
     { path: '/add', component: Addpage },
-    { path: '/edit', component: EditPage },
+    { path: '/edit/:id', component: EditPage },
     { path: '/delete', component: DeletePage }
 ];
 
