@@ -65,7 +65,9 @@ export default {
         .then(response => {
             console.log(response);
             this.successMessage = 'Player updated successfully';
-            this.$router.push('/')
+            setTimeout(() =>{
+                this.$router.push('/')
+            }, 2000);
         })
         .catch(error => {
           console.error('Error updating player:', error);

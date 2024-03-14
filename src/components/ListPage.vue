@@ -17,7 +17,7 @@
                     <strong class="text-lg">Position:</strong> <span>{{ player.position }}</span>
                 </div>
                 <router-link :to="'/edit/' + player.id" class="bg-blue-500 text-white py-1 px-3 rounded-md mt-2 mr-2 hover:bg-blue-600 transition duration-300">Edit</router-link>
-                <button @click="deletePlayer(player.id)" class="bg-red-500 text-white py-1 px-3 rounded-md mt-2 hover:bg-red-600 transition duration-300">Delete</button>
+                <router-link :to="'/delete/' + player.id" class="bg-red-500 text-white py-1 px-3 rounded-md mt-2 hover:bg-red-600 transition duration-300">Delete</router-link>
             </li>
         </ul>
     </div>

@@ -9,7 +9,7 @@ const routes = [
     { path: '/', component: ListPage },
     { path: '/add', component: Addpage },
     { path: '/edit/:id', component: EditPage },
-    { path: '/delete', component: DeletePage }
+    { path: '/delete/:id', component: DeletePage }
 ];
 
 const router = createRouter({
