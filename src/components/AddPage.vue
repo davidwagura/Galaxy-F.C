@@ -12,7 +12,14 @@
         </div>
         <div>
             <label for="nationality" class="block font-medium">Nationality:</label>
-            <input type="text" id="nationality" v-model="formData.nationality"  class="w-full h-12 rounded-md border border-black focus:border-blue-500" required />
+            <!-- <input type="text" id="nationality" v-model="formData.nationality"  class="w-full h-12 rounded-md border border-black focus:border-blue-500" required /> -->
+            <select name="nationality" id="nationality" class="w-full h-12 rounded-md border border-black">
+                <option value="Kenyan">Kenyan</option>
+                <option value="American">American</option>
+                <option value="Canadian">Canadian</option>
+                <option value="Colombian">Colombian</option>
+                <option value="British">British</option>
+            </select>
         </div>
         <div>
             <label for="position" class="block font-medium">Position:</label>

@@ -1,9 +1,9 @@
 <template>
     <div class="max-w-xl mx-auto">
-        <h2 class="bg-blue-500 text-white py-2 px-4 mb-4 text-center">Team Players</h2>
-        <router-link to="/add" class="block mb-4 text-blue-500 border rounded  hover:underline">Add Player</router-link>
+        <h2 class="bg-blue-500 text-white py-2 px-4 mb-4 mt-4 text-center">Team Players</h2>
+        <router-link to="/add" class="p-2 text-white bg-blue-500 border rounded  hover:underline">Add Player</router-link>
         <ul>
-            <li v-for="player in players" :key="player.id" class="bg-gray-100 rounded-md shadow-md p-4 mb-4">
+            <li v-for="player in players" :key="player.id" class="bg-gray-100 rounded-md shadow-md p-4 mt-7 mb-4">
                 <div>
                     <strong class="text-lg">Name:</strong> <span>{{ player.name }}</span>
                 </div>
