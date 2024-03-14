@@ -43,3 +43,9 @@ export default {
     }
 }
 </script>
+
+ <style>
+    label {
+        text-align: center;
+    }
+</style>

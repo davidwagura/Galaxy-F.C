@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h2>Team Players</h2>
+        <h2 class="bg-blue-500 ">Team Players</h2>
+        <router-link to="/add">Add Player</router-link>
         <ul>
             <li v-for="player in players" :key="player.id">
                 <div>
@@ -43,17 +44,17 @@ export default {
 
     methods: {
         listPlayers() {
-            axios.get()
+            axios.get('http://127.0.0.1:8000/api/player/{player}')
             .then(response => {
                 console.log(response.data)
                 this.players = response.data;
             })
         },
         editPlayer() {
-
+            this.$router.push('/edit')
         },
         deletePlayer() {
-            axios.delete()
+            this.$router.push('/delete')
             
         }
     }

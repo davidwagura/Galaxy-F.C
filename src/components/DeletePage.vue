@@ -19,8 +19,8 @@ export default {
     },
 
     method: {
-        confirmDelete() {
-            axios.delete(`http://127.0.0.1:8000/api/member/${id}`)
+        confirmDelete(id) {
+            axios.delete(`http://127.0.0.1:8000/${id}`)
                 .then(response => {
                     console.log(response);
                     this.successMessage = 'Player deleted successfully.';
